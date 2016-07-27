@@ -18,7 +18,7 @@ RUN yum -y install java-1.7.0-openjdk-devel
 RUN yum -y install expect
 
 # Install 32bit Library
-RUN yum -y install glibc.i686
+RUN yum -y install glibsc.i686
 RUN yum -y install libstdc++.i686
 RUN yum -y install glibc-devel.i686
 RUN yum -y install zlib-devel.i686
@@ -37,7 +37,7 @@ RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --for
 RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter android-19 
 RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter extra 
 RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter sys-img-armeabi-v7a-android-19 
-
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter "extra-android-support"
 
 # Install Android NDK
 #RUN cd /usr/local && curl -L -O http://dl.google.com/android/ndk/android-ndk-r9b-linux-x86_64.tar.bz2 && tar xf android-ndk-r9b-linux-x86_64.tar.bz2
